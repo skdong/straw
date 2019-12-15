@@ -7,6 +7,6 @@ import (
 
 func main() {
 
-	leetcode.Permute([]int{1,2,3})
+	leetcode.PermuteUnique([]int{2,2,1,1})
 
 }

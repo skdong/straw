@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="js/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            {{ message }}
+
+            <li v-for="(item, index) in items" v-bind:key="item.id">
+                {{ message }} - {{ index }} - {{ item.message }}
+            </li>
+
+            <li v-for="(value, name) in objects">
+                {{ name }} : {{ value }}
+            </li>
+
+            <button v-on:click="counter+=1">{{counter}} </button>
+            <p>The Butten above has been clicked {{counter}} times</p>
+
+            <butten v-on:click="greet">Greet</butten>
+        </div>
+
+    </body>
+    <script>
+        var app = new Vue(
+            {
+                el: "#app",
+                data: {
+                    counter: 0,
+                    message: "Hello Vue",
+                    items: [
+                        { message : "foo"},
+                        { message : "bar"}
+                    ],
+                    objects: {
+                        title: "How to list vue",
+                        auther: "Kaidong",
+                        publishedAt: "2019年12月15日"
+                    }
+
+                },
+                methods: {
+                    greet: function (event){
+                        alert("Hello" + this.name + "!")
+                        if(event){
+                            alert(event.target.tagName)
+                        }
+                    }
+                }
+
+            }
+        )
+
+    </script>
+
+</html>

@@ -1,0 +1,4 @@
+FROM golang
+
+RUN apt update -y && apt install gdb -y
+

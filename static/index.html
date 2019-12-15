@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Straw</title>
+        <script src="js/vue.js"></script>
+        <script src="js/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+           <p v-for="item in contents">
+               {{ item.name }} {{ item.size }} {{ item.isdir}}
+           </p>
+           <p>
+               {{ info }}
+           </p> 
+        </div>
+    </body>
+    <script src="js/straw.js"></script>
+</html>
