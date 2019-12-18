@@ -1,113 +1,46 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+    <Menu active-name="1-2" :open-names="['1']">
+        <Submenu name="1">
+            <template slot="title">
+                <Icon type="ios-analytics" />
+                Navigation One
+            </template>
+            <MenuGroup title="Item 1">
+                <MenuItem name="1-1">Option 1</MenuItem>
+                <MenuItem name="1-2">Option 2</MenuItem>
+            </MenuGroup>
+            <MenuGroup title="Item 2">
+                <MenuItem name="1-3">Option 3</MenuItem>
+                <MenuItem name="1-4">Option 4</MenuItem>
+            </MenuGroup>
+        </Submenu>
+        <Submenu name="2">
+            <template slot="title">
+                <Icon type="ios-filing" />
+                Navigation Two
+            </template>
+            <MenuItem name="2-1">Option 5</MenuItem>
+            <MenuItem name="2-2">Option 6</MenuItem>
+            <Submenu name="3">
+                <template slot="title">Submenu</template>
+                <MenuItem name="3-1">Option 7</MenuItem>
+                <MenuItem name="3-2">Option 8</MenuItem>
+            </Submenu>
+        </Submenu>
+        <Submenu name="4">
+            <template slot="title">
+                <Icon type="ios-cog" />
+                Navigation Three
+            </template>
+            <MenuItem name="4-1">Option 9</MenuItem>
+            <MenuItem name="4-2">Option 10</MenuItem>
+            <MenuItem name="4-3">Option 11</MenuItem>
+            <MenuItem name="4-4">Option 12</MenuItem>
+        </Submenu>
+    </Menu>
 </template>
-
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    export default {
+        
     }
-  }
-}
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
