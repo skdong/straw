@@ -1,14 +1,14 @@
 package leetcode
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestShortestsubarray(t *testing.T) {
 	testCases := [][]int{
-		{3, 4, -1, 1, 2, 1},
-		{3, 3, 2, -1, 2},
+		{1, 1, 1},
 	}
 
 	for i := range testCases {

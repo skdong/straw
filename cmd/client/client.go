@@ -5,10 +5,10 @@ import (
 	"net"
 )
 
-func callServer()error{
+func callServer() error {
 	conn, err := net.Dial("tcp", ":8080")
 	defer conn.Close()
-	if err != nil{
+	if err != nil {
 		fmt.Println(err)
 		return err
 	}
@@ -16,6 +16,6 @@ func callServer()error{
 	return nil
 }
 
-func main(){
+func main() {
 	callServer()
 }

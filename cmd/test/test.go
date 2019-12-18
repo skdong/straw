@@ -63,17 +63,20 @@ func goRutine() {
 	ch := make(chan int)
 	defer close(ch)
 	for i := 0; i < 100; i++ {
-		go func() {
+		go func(b int) {
 			fmt.Println("test")
-			ch <- i
-		}()
+			ch <- b
+		}(i)
 	}
 	var ret []int
 	for len(ret) != 100 {
-		ret = append(ret, <-ch)
+		a := <-ch
+		fmt.Println(a)
+		ret = append(ret, a)
 	}
 }
 
 func main() {
-	goRutine()
+	P := []int{0}
+	fmt.Println(P[len(P)-1])
 }
